@@ -1,4 +1,4 @@
-# practica
+# Frontend-vuex-2
 
 > A Vue.js project
 
