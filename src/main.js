@@ -7,6 +7,7 @@ import store from './store';
 import App from './App';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import ChatPage from './pages/ChatPage';
 
 Vue.component('app', App);
 
@@ -16,11 +17,13 @@ Vue.use(VueRouter);
 /* eslint-disable no-new */
 const routes = [
   {path: '/', component: LoginPage, name: 'login'},
-  {path: '/dashboard', component: DashboardPage, name: 'dashboard', meta: {requiresAuth: true}}
+  {path: '/dashboard', component: DashboardPage, name: 'dashboard', meta: {requiresAuth: true}},
+  {path: '/chat', component: ChatPage, name: 'chat', meta: {requiresAuth: true}}
 ];
 
 const router = new VueRouter({
   mode: 'history',
+  linkActiveClass: 'is-active',
   routes
 });
 

@@ -1,6 +1,7 @@
 export const apiDomain = 'http://localhost:8000/';
 export const urlLogin = `${apiDomain}oauth/token`;
 export const urlUser = `${apiDomain}api/user`;
+export const urlUserList = `${apiDomain}api/v2/user-list`;
 
 export const getHeader = function(){
     const tokenData = JSON.parse(window.localStorage.getItem('authUser'));

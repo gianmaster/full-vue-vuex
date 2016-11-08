@@ -10,9 +10,11 @@
       <div class="section">
         <router-view></router-view>
       </div>
+      <!--
       <div class="footer">
         <p class="subtitle">Derecheos reservados</p>
       </div>
+      -->
     </div>
   </div>
 </template>

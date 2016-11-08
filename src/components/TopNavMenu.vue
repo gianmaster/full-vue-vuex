@@ -26,7 +26,7 @@
         </span>
 
         <div class="nav-right nav-menu">
-            <a class="nav-item" href="#">Home</a>
+            <router-link :to="{name: 'chat'}" class="nav-item">Chat-Team</router-link>
             <a class="nav-item" href="#">Documentatio</a>
             <a class="nav-item" href="#">Blog</a>
             <span class="nav-item">
@@ -36,11 +36,11 @@
                     </span>
                     <span>Tweet</span>
                 </a>
-                <a class="button is-primary" href="#">
+                <a class="button is-warning" href="#" @click="onSignOut">
                     <span class="icon">
-                        <i class="fa fa-download"></i>
+                        <i class="fa fa-sign-out"></i>
                     </span>
-                    <span>Download</span>
+                    <span>Salir</span>
                 </a>
             </span>
         </div>
@@ -60,6 +60,13 @@ export default {
     created (){
         const userObj = JSON.parse(window.localStorage.getItem('authUser'));
         this.$store.dispatch('setUserObject', userObj);
+    },
+    methods: {
+        onSignOut(){
+            this.$store.dispatch('clearAuthUser');
+            window.localStorage.removeItem('authUser');
+            this.$router.push({name: 'login'});
+        }
     }
 }
 
