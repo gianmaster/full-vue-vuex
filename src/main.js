@@ -29,7 +29,6 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
-    console.log('entra');
     const authUser = JSON.parse(window.localStorage.getItem('authUser'));
     if (authUser && authUser.access_token) {
       next();

@@ -23,6 +23,7 @@ module.exports = {
     "spaced-comment": 0,
     "eqeqeq": 0,
     "keyword-spacing": 0,
+    "no-unused-vars": 1,
     
     // allow paren-less arrow functions
     'arrow-parens': 0,

@@ -1,13 +1,21 @@
 import Vue from 'vue';
-import {urlUserList, getHeader} from '../../config';
+import {urlUserList, urlUserConversation, getHeader} from '../../config';
 
 const store = {
-    userList: {}
+    userList: {},
+    currenChatUser: null,
+    conversation: null
 };
 
 const mutations = {
     SET_USER_LIST(state, userList){
         state.userList = userList;
+    },
+    SET_CURRENT_USER(state, user){
+        state.currenChatUser = user;
+    },
+    SET_CONVERSATION(state, conversation){
+        state.conversation = conversation;
     }
 }
 
@@ -19,6 +27,14 @@ const actions = {
                 return response.body.data;
             }
         })
+    },
+    setCurrentChatUser({commit}, user){
+        commit('SET_CURRENT_USER', user);
+        /*const postData = {id: user.id};
+        Vue.http.post(urlUserConversation, postData, {headers: getHeader()}).then(response => {
+            commit('SET_CURRENT_USER', user);
+            commit('SET_CONVERSATION', response.body.data);
+        })*/
     }
 }
 

@@ -3,13 +3,12 @@
     <div class="columns">
         <div class="column is-3">
             <div class="container">
-                <div class="panel">
+                <div class="panel is-success">
                     <div class="panel-heading">
-                        <h3 class="title">Chat</h3>
-                        <h4 class="subtitle">Usuarios con los que puedes chatear</h4>
+                        <h4>Chat</h4>
                     </div>
                     <div class="panel-block">
-                        Giancarlos el mejor
+                        <user-list></user-list>
                     </div>
                 </div>
             </div>
@@ -29,7 +28,21 @@
 </template>
 
 <script>
+import userList from '../components/chat/ChatUserList';
+import {mapState} from 'vuex';
+
 export default {
-    name: 'ChatPage'
+    name: 'ChatPage',
+    components: {
+        userList: userList
+    },
+    created(){
+        this.$store.dispatch('setUserList');
+    },
+    computed: {
+        ...mapState({
+            chatStore: state => state.chatStore
+        })
+    }
 }
 </script>
