@@ -15,13 +15,12 @@
         </div>
 
         <!-- Content chat -->
+        <div class="column is-6">
+            <chat-widget></chat-widget>
+        </div>
+        <!-- Content aside info -->
         <div class="column">
-            <div class="container">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Voluptatem dolorem dolores distinctio perspiciatis debitis deserunt fugit reprehenderit reiciendis, ipsa in sequi quae voluptatum, eaque molestiae architecto quos dolore! 
-                    Fugiat, obcaecati.</p>
-            </div>
+            Aqui va otra cosa
         </div>
     </div>
 
@@ -29,12 +28,14 @@
 
 <script>
 import userList from '../components/chat/ChatUserList';
+import ConversationWidget from '../components/chat/ChatConversationWidget';
 import {mapState} from 'vuex';
 
 export default {
     name: 'ChatPage',
     components: {
-        userList: userList
+        userList: userList,
+        chatWidget: ConversationWidget
     },
     created(){
         this.$store.dispatch('setUserList');

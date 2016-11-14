@@ -1,6 +1,7 @@
 // INIT STATE
 const state = {
-    authUser: null
+    authUser: null,
+    prueba: null
 };
 
 //MUTATIONS PROCES
